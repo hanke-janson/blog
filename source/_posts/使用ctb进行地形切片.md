@@ -2,7 +2,7 @@
 title: 使用ctb进行地形切片
 date: 2025-05-03 04:44:50
 categories: GIS
-tags: [GIS, CTB, 地形切片]
+tags: [CTB, 地形切片]
 ---
 
 # ctb地形切片
@@ -58,5 +58,5 @@ ctb-tile --output-dir /data/terrain -l /data/tif/ctb-data/China.tif
 
 2. 补全terrain数据
 
-- 补全`0/0/0.terrain`文件
+- 补全 `0/0/0.terrain`文件
   补充的地形可为任意地形

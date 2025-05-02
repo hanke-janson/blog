@@ -2,7 +2,7 @@
 title: 使用mb-util工具处理png格式的底图瓦片
 date: 2025-05-03 04:56:37
 categories: GIS
-tags: [GIS, mb-util, png, mbtiles, 瓦片]
+tags: [mb-util, png, mbtiles, 瓦片]
 ---
 
 # 注意事项
