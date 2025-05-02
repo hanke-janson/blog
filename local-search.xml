@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>使用 Docker 以 docker-compose 的方式安装 MySQL 5.7.44</title>
+    <link href="/blog/2025/05/02/%E4%BD%BF%E7%94%A8%20Docker%20%E4%BB%A5%20docker-compose%20%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85%20MySQL%205.7.44/"/>
+    <url>/blog/2025/05/02/%E4%BD%BF%E7%94%A8%20Docker%20%E4%BB%A5%20docker-compose%20%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85%20MySQL%205.7.44/</url>
+    
+    <content type="html"><![CDATA[<h1 id="使用-Docker-以-docker-compose-的方式安装-MySQL-5-7-44"><a href="#使用-Docker-以-docker-compose-的方式安装-MySQL-5-7-44" class="headerlink" title="使用 Docker 以 docker-compose 的方式安装 MySQL 5.7.44"></a>使用 Docker 以 docker-compose 的方式安装 MySQL 5.7.44</h1><h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><ol><li>已安装 Docker 和 Docker Compose。</li><li>确保本地没有占用 3306 端口的服务。</li></ol><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-创建项目目录"><a href="#1-创建项目目录" class="headerlink" title="1. 创建项目目录"></a>1. 创建项目目录</h3><p>在终端中执行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> mysql-docker &amp;&amp; <span class="hljs-built_in">cd</span> mysql-docker<br></code></pre></td></tr></table></figure><h3 id="2-创建-docker-compose-yml-文件"><a href="#2-创建-docker-compose-yml-文件" class="headerlink" title="2. 创建 docker-compose.yml 文件"></a>2. 创建 <code>docker-compose.yml</code> 文件</h3><p>在项目目录下创建 <code>docker-compose.yml</code> 文件，并添加以下内容：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;3&quot;</span><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">mysql:</span><br>    <span class="hljs-comment"># 容器名(以后的控制都通过这个)</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">mysql5.7.44</span><br>    <span class="hljs-comment"># 重启策略</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">mysql:5.7.44</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;3306:3306&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-comment"># 挂载配置文件</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">C:\dev\1</span> <span class="hljs-string">tools\docker_mnt\mysql5.7.44\conf:/etc/mysql/conf.d</span><br>      <span class="hljs-comment"># 挂载日志</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">C:\dev\1</span> <span class="hljs-string">tools\docker_mnt\mysql5.7.44\logs:/logs</span><br>      <span class="hljs-comment"># 挂载数据</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">C:\dev\1</span> <span class="hljs-string">tools\docker_mnt\mysql5.7.44\data:/var/lib/mysql</span><br>    <span class="hljs-attr">command:</span><br>      [<br>        <span class="hljs-string">&quot;mysqld&quot;</span>,<br>        <span class="hljs-string">&quot;--innodb-buffer-pool-size=80M&quot;</span>,<br>        <span class="hljs-string">&quot;--character-set-server=utf8mb4&quot;</span>,<br>        <span class="hljs-string">&quot;--collation-server=utf8mb4_unicode_ci&quot;</span>,<br>        <span class="hljs-string">&quot;--default-time-zone=+8:00&quot;</span>,<br>        <span class="hljs-string">&quot;--lower-case-table-names=1&quot;</span>,<br>      ]<br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-comment"># root 密码</span><br>      <span class="hljs-attr">MYSQL_ROOT_PASSWORD:</span> <span class="hljs-number">123456</span><br></code></pre></td></tr></table></figure><h3 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3. 启动服务"></a>3. 启动服务</h3><p>在终端中执行以下命令启动 MySQL 服务：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d<br></code></pre></td></tr></table></figure><h3 id="4-验证安装"><a href="#4-验证安装" class="headerlink" title="4. 验证安装"></a>4. 验证安装</h3><p>执行以下命令查看容器状态：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps<br></code></pre></td></tr></table></figure><p>确保 <code>mysql5.7.44</code> 容器正在运行。</p><h3 id="5-连接-MySQL"><a href="#5-连接-MySQL" class="headerlink" title="5. 连接 MySQL"></a>5. 连接 MySQL</h3><p>使用以下命令连接到 MySQL：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it mysql5.7.44 mysql -u root -p<br></code></pre></td></tr></table></figure><p>输入 <code>MYSQL_ROOT_PASSWORD</code> 即可登录。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>修改 <code>docker-compose.yml</code> 中的密码和用户名为实际需要的值。</li><li>数据库数据会保存在 <code>mysql_data</code> 卷中，容器删除后数据仍然保留。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Database</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>mysql</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用mb-util工具处理png格式的底图瓦片</title>
+    <link href="/blog/2025/05/02/%E4%BD%BF%E7%94%A8mb-util%E5%B7%A5%E5%85%B7%E5%A4%84%E7%90%86png%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%BA%95%E5%9B%BE%E7%93%A6%E7%89%87/"/>
+    <url>/blog/2025/05/02/%E4%BD%BF%E7%94%A8mb-util%E5%B7%A5%E5%85%B7%E5%A4%84%E7%90%86png%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%BA%95%E5%9B%BE%E7%93%A6%E7%89%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol><li>获得的png瓦片数据不能直接使用，必须先进行mbtiles转换后，再根据tms模式导出png才可，否则会出现瓦片错位的情况。</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python mb-util --scheme=tms mbtiles文件路径 png输入文件夹路径（不存在的才行）<br></code></pre></td></tr></table></figure><ol start="2"><li>如果y需要反转，需要加参数 <code>--scheme=tms</code></li></ol><h1 id="将-png格式-转成-mbtiles格式-这里用的都是默认参数"><a href="#将-png格式-转成-mbtiles格式-这里用的都是默认参数" class="headerlink" title="将 png格式 转成 mbtiles格式 (这里用的都是默认参数)"></a>将 png格式 转成 mbtiles格式 (这里用的都是默认参数)</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python mb-util --image_format=png E:\map_arcgis\map_arcgis-img E:\map_arcgis\mbtiles\arcgis_img_0-4.mbtiles<br></code></pre></td></tr></table></figure><h1 id="将-mbtiles格式-转为-png格式"><a href="#将-mbtiles格式-转为-png格式" class="headerlink" title="将 mbtiles格式 转为 png格式"></a>将 mbtiles格式 转为 png格式</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python mb-util --image_format=png E:\map_arcgis\mbtiles\arcgis_img_0-4.mbtiles E:\map_arcgis\map_arcgis-img（不存在的才行）<br></code></pre></td></tr></table></figure><blockquote><p>注意： UE使用的瓦片需要指定tms模式</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python mb-util --scheme=tms --image_format=png E:\map_sea_mbtiles\sea_1-7.mbtiles E:\map_sea\map-sea-tms（不存在的才行）<br></code></pre></td></tr></table></figure><h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://github.com/mapbox/mbutil">mb-util</a></p><p><a href="https://www.jianshu.com/p/5f969c3b78a4">MBUtil实现mbtiles文件和地图切片之间的格式转换</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>GIS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GIS</tag>
+      
+      <tag>mb-util</tag>
+      
+      <tag>png</tag>
+      
+      <tag>mbtiles</tag>
+      
+      <tag>瓦片</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用ctb进行地形切片</title>
     <link href="/blog/2025/05/02/%E4%BD%BF%E7%94%A8ctb%E8%BF%9B%E8%A1%8C%E5%9C%B0%E5%BD%A2%E5%88%87%E7%89%87/"/>
     <url>/blog/2025/05/02/%E4%BD%BF%E7%94%A8ctb%E8%BF%9B%E8%A1%8C%E5%9C%B0%E5%BD%A2%E5%88%87%E7%89%87/</url>
@@ -21,6 +79,10 @@
     <tags>
       
       <tag>GIS</tag>
+      
+      <tag>CTB</tag>
+      
+      <tag>地形切片</tag>
       
     </tags>
     
