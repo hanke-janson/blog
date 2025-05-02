@@ -17,8 +17,10 @@ yarn server # 启动hexo服务
 下载fluid主题：
 ```shell
 cd blog
-git clone https://github.com/fluid-dev/hexo-theme-fluid.git themes/fluid
+yarn add hexo-theme-fluid --save 
 ```
+然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml (opens new window)内容复制过去
+
 修改配置文件`_config.yml`中的相关字段：
 ```yaml
 # 指定主题
@@ -49,26 +51,3 @@ layout: about
 ```shell
 yarn new 文章标题
 ```
-
-## 部署到GitHub Pages
-
-````shell
-yarn add hexo-deployer-git --save # 安装hexo-deployer-git插件
-````
-修改根目录下的 _config.yml，配置 GitHub 相关信息
-```yaml
-deploy:
-  type: git
-  repo: git@github.com:hanke-janson/blog.git
-  branch: main
-  token: # 请替换成自己的 GitHub Personal Access Token
-```
-其中 token 为 GitHub 的 Personal access tokens，获取方式如下图所示：
-
-![Personal access tokens](./source/img/token.png)
-
-```shell
-yarn build # 编译博客
-yarn deploy # 部署博客到GitHub Pages
-```
-
