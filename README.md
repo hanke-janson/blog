@@ -12,6 +12,13 @@ yarn server # 启动hexo服务
 ```
 然后在浏览器中访问 http://localhost:4000 就可以看到博客页面了。
 
+## 格式化检查
+
+```shell
+yarn prettier --check ./source
+yarn prettier --write ./source
+```
+
 ## 更换主题(fluid主题)
 
 下载fluid主题：

@@ -4,6 +4,7 @@ date: 2025-05-03 04:56:37
 categories: GIS
 tags: [GIS, mb-util, png, mbtiles, 瓦片]
 ---
+
 # 注意事项
 
 1. 获得的png瓦片数据不能直接使用，必须先进行mbtiles转换后，再根据tms模式导出png才可，否则会出现瓦片错位的情况。
@@ -34,6 +35,6 @@ python mb-util --scheme=tms --image_format=png E:\map_sea_mbtiles\sea_1-7.mbtile
 
 # 参考链接
 
-[mb-util](<https://github.com/mapbox/mbutil>)
+[mb-util](https://github.com/mapbox/mbutil)
 
-[MBUtil实现mbtiles文件和地图切片之间的格式转换](<https://www.jianshu.com/p/5f969c3b78a4>)
+[MBUtil实现mbtiles文件和地图切片之间的格式转换](https://www.jianshu.com/p/5f969c3b78a4)
