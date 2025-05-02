@@ -2,7 +2,7 @@
 title: 使用ctb进行地形切片
 date: 2025-05-03 04:44:50
 categories: GIS
-tags: GIS
+tags: [GIS, CTB, 地形切片]
 ---
 
 # ctb地形切片
