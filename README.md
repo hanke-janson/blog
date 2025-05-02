@@ -19,6 +19,15 @@ yarn prettier --check ./source
 yarn prettier --write ./source
 ```
 
+## 压缩
+
+1. 安装依赖：
+```shell
+yarn add gulp --save-dev
+yarn add gulp-minify-css gulp-babel gulp-uglify gulp-htmlmin gulp-htmlclean gulp-imagemin imagemin-jpegtran imagemin-svgo imagemin-gifsicle imagemin-optipng --save-dev
+```
+2. 在 `yarn build` 执行后执行压缩命令 `gulp`
+
 ## 更换主题(fluid主题)
 
 下载fluid主题：

@@ -1,6 +1,7 @@
 # .github/workflows/blog.yml 
 name: BLOG 
-on: [push] # run this action in every push
+# run this action in every push
+on: [push] 
 permissions:
   contents: write
 jobs:
@@ -15,6 +16,8 @@ jobs:
           yarn prettier --check ./source
       - name: Build
         run: yarn build
+      - name: gulp
+        run: yarn gulp
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
