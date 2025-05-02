@@ -986,7 +986,7 @@ about:
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/hanke-janson", tip: "GitHub" }
     - { class: "iconfont icon-mail", tip: "邮箱：1048458653@163.com" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "个人微信.jpg" }
+    - { class: "iconfont icon-wechat-fill", qrcode: "./img/qrcode.jpg" }
 
 
 #---------------------------
