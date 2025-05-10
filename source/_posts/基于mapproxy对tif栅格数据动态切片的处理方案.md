@@ -120,6 +120,8 @@ docker tag togettoyou/ghcr.io.mapproxy.mapproxy.mapproxy:1.16.0-nginx ghcr.io/ma
 docker run --rm --name "mapproxy_test" -p 60083:80 -d -t -v `pwd`/mapproxyconfig:/mapproxy/config ghcr.io/mapproxy/mapproxy/mapproxy:1.16.0-nginx
 ```
 
+这里挂载的目录mapproxyconfig，里面放yaml文件
+
 > http://192.168.12.1:60083/mapproxy/demo/ 即可访问
 
 MapProxy 支持 TMS 作为源 可以替代mapcache
