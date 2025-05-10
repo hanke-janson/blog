@@ -7,7 +7,7 @@ tags: [GDAL, Dockerfile]
 
 # GDAL部署
 
-## amd架构 
+## amd架构
 
 ```dockerfile
 FROM alpine:3.17
