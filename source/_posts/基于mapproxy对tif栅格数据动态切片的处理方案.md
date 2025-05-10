@@ -23,7 +23,7 @@ tags: [Mapserver, Mapcache, Mapproxy, WMS, WMTS, Tiff]
 
 ### 1 mapserver的镜像安装
 
-直接拉取 [mapserver](<[camptocamp/mapserver Tags | Docker Hub](https://hub.docker.com/r/camptocamp/mapserver/tags) >) 镜像
+直接拉取 [camptocamp/mapserver Tags | Docker Hub](https://hub.docker.com/r/camptocamp/mapserver/tags) 镜像
 
 ```bash
 docker pull camptocamp/mapserver
