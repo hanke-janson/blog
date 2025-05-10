@@ -4,6 +4,57 @@
   
   
   <entry>
+    <title>基于3dtiles格式数据对倾斜摄影模型进行轻量化处理</title>
+    <link href="/blog/2025/05/10/%E5%9F%BA%E4%BA%8E3dtiles%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%AF%B9%E5%80%BE%E6%96%9C%E6%91%84%E5%BD%B1%E6%A8%A1%E5%9E%8B%E8%BF%9B%E8%A1%8C%E8%BD%BB%E9%87%8F%E5%8C%96%E5%A4%84%E7%90%86/"/>
+    <url>/blog/2025/05/10/%E5%9F%BA%E4%BA%8E3dtiles%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%AF%B9%E5%80%BE%E6%96%9C%E6%91%84%E5%BD%B1%E6%A8%A1%E5%9E%8B%E8%BF%9B%E8%A1%8C%E8%BD%BB%E9%87%8F%E5%8C%96%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h1 id="基于3dtiles格式数据对倾斜摄影模型进行轻量化处理"><a href="#基于3dtiles格式数据对倾斜摄影模型进行轻量化处理" class="headerlink" title="基于3dtiles格式数据对倾斜摄影模型进行轻量化处理"></a>基于3dtiles格式数据对倾斜摄影模型进行轻量化处理</h1><p>软件: SuperMap iDesktopX 11i 2023</p><p>原数据格式: 3dtiles</p><p>目标格式: 3dtiles</p><p>处理过程:</p><ul><li><p><code>三维数据</code> -&gt; <code>3DTiles-&gt;S3M</code></p><blockquote><p>设置源配置文件: tileset.json 文件位置</p><p>目标路径: 生成的S3M文件的文件夹路径</p><p>文件类型: 倾斜摄影</p><p>纹理压缩格式: DXT(PC设备)</p><p>顶点优化方式: 不压缩</p><p>S3M版本: S3M 1.0</p><p>线程数: 若崩溃，减少线程数值</p></blockquote></li><li><p><code>三维数据</code>-&gt;<code>数据处理</code>-&gt;<code>倾斜入库</code></p><blockquote><p>源配置文件(.scp): 若是单个数据文件夹，则选择s3m目录下的.scp文件即可，若是多个数据文件夹，需要选择多个.scp文件，然后勾选合并图层选项，单个.scp文件无需勾选</p><p>基础设置:</p><ul><li>输出目录: 新S3M文件的文件夹路径</li><li>S3M版本: S3M 1.0</li><li>纹理压缩格式: DXT(PC设备)</li><li>线程数: 若崩溃，减少线程数值</li><li>顶点优化方式: Draco压缩</li><li>存储格式: 原始</li><li>中心点坐标单位: 米</li></ul><p>高级设置:</p><ul><li>勾选重建LOD<ul><li>重建指数: 4^n个块为1个块文件，根据文件总体大小设置</li><li>顶层节点着色类型: 纹理和顶点颜色</li><li>重建类型: 重建所有层级</li><li>勾选融合边界</li></ul></li><li>勾选坐标转换<ul><li>目标坐标系: 4490，(注: 源数据坐标系为投影坐标系4546)</li><li>参照系转换设置: 转换方法: Geocemtric Translation(3-para)</li></ul></li><li>勾选纹理重映射</li><li>原配置文件若有多个S3M文件，则勾选合并图层</li></ul></blockquote></li><li><p><code>工具箱</code>-&gt;<code>S3M-&gt;3DTiles</code></p><blockquote><p>源数据：选择第二次轻量化生成的S3M文件夹下的.scp文件</p><p>结果数据: 最后的结果数据文件夹路径</p><p>参数设置: 线程数: 若崩溃，减少线程数值</p></blockquote></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>倾斜摄影数据处理</title>
+    <link href="/blog/2025/05/10/%E5%80%BE%E6%96%9C%E6%91%84%E5%BD%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    <url>/blog/2025/05/10/%E5%80%BE%E6%96%9C%E6%91%84%E5%BD%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h1 id="倾斜摄影数据处理"><a href="#倾斜摄影数据处理" class="headerlink" title="倾斜摄影数据处理"></a>倾斜摄影数据处理</h1><h1 id="OSGB优化"><a href="#OSGB优化" class="headerlink" title="OSGB优化"></a>OSGB优化</h1><p>1.合并根节点</p><p>先使用 Desktop 11i(2022)版本生成scp配置文件</p><p>使用超图 iDesktopX 10i 10.0版本进行根节点合并</p><p>根节点条数按金字塔层级x4计算，如金字塔层级设置为1，则合并根节点数为原根节点数&#x2F;4*1</p><h1 id="3D-Tiles"><a href="#3D-Tiles" class="headerlink" title="3D Tiles"></a>3D Tiles</h1><p>1.OSGB-3D Tiles</p><p>使用CesiumLab将处理好的OSGB数据转成3D Tiles</p><p>注意如需数据优化 需在OSGB 阶段进行优化再转换</p><p>2.S3M - 3D Tiles</p><p>用 SuperMap iDesktop x 11i(2023) 将 S3M1.0数据转为 3D Tiles</p><p>注意 仅用 S3M1.0 数据才能用其转为3D Tiles</p><h1 id="S3M"><a href="#S3M" class="headerlink" title="S3M"></a>S3M</h1><p>1.OSGB-S3M前端插件可加载版</p><p>使用SuperMap iDesktopx 11i(2022) 11.0 进行倾斜摄影入库(几何不压缩，纹理DXT)，完成后生成 S3M 文件前端可加载</p><p>2.OSGB-S3M3.0文件压缩版-3D Tiles</p><p><strong>使用SuperMap Desktop 11i 进行倾斜摄影入库 按照最大优化设置，生成 S3M文件可用于转换为3D Tiles</strong></p><p>（仅可转换S3M1.0）</p><blockquote><p>正射部分在转成3dtiles后，缩放到一定层级会缺失部分</p></blockquote><p>3.3D Tiles-S3M3.0-倾斜摄影入库</p><p>先将3D Tiles 用SuperMap iDesktopx 11i(2022)转为 S3M3.0，再倾斜摄影入库重新入库合并根节点等（可能存在模型丢失问题）</p><p>4.S3M 3.0 &gt;S3M 2.0&gt;S3M 1.0</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用STK制作航迹数据</title>
+    <link href="/blog/2025/05/10/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/"/>
+    <url>/blog/2025/05/10/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="使用STK制作航迹数据"><a href="#使用STK制作航迹数据" class="headerlink" title="使用STK制作航迹数据"></a>使用STK制作航迹数据</h1><p><a href="https://blog.csdn.net/VILAKO/article/details/120897342">参考 matlab 版本对应的 STK</a><br><a href="https://zhuanlan.zhihu.com/p/63365900">STK 相关坐标系</a><br><a href="https://blog.csdn.net/stk10/article/details/103263324?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-103263324-blog-111719287.t5_download_comparev1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-103263324-blog-111719287.t5_download_comparev1&utm_relevant_index=2">STK 中天体坐标系的定义</a><br><a href="https://zhuanlan.zhihu.com/p/585193898">STK11 官方 Tutorial 学习笔记 </a></p><h2 id="度分秒转经纬度："><a href="#度分秒转经纬度：" class="headerlink" title="度分秒转经纬度："></a>度分秒转经纬度：</h2><p>STK 中可以把航线的数据单位改为 Deg:Min:Sec(DMS)</p><table><thead><tr><th>度 MID(B2,1,2)</th></tr></thead><tbody><tr><td>分 MID(B2,4,2)</td></tr><tr><td>秒 MID(B2,7,7)</td></tr><tr><td>度分秒转经纬度（excel 函数） mid(B2,1,2)+(mid(B2,4,2)&#x2F;60)+(mid(B2,7,7)&#x2F;3600)</td></tr><tr><td>度分秒转经纬度公式:L&#x3D;D+M&#x2F;60+S&#x2F;3600</td></tr><tr><td>D 度 M 分 S 秒</td></tr></tbody></table><h2 id="使用-STK-制作飞行器航迹数据"><a href="#使用-STK-制作飞行器航迹数据" class="headerlink" title="使用 STK 制作飞行器航迹数据"></a>使用 STK 制作飞行器航迹数据</h2><p>创建一个场景</p><p><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678419208035.png" alt="1678419208035"></p><p>插入一个飞行器对象</p><p><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678419328819.png" alt="1678419328819"></p><p>双击飞行器对象设置相关数据</p><ul><li><p>开始时间和结束时间按照需求来</p></li><li><p>插入点数据（这里是起点和终点，【可添加多点，相当于飞行过程中的转折点】）</p><p><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678420579422.png" alt="1678420579422"></p></li></ul><p>这时发现飞行器以及航线数据已经添加到视图当中了<br><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678419771094.png" alt="1678419771094"></p><p>右击飞行器对象选择 Report &amp; Graph Manager,在列表中选择 LLA Position<br><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678420142550.png" alt="1678420142550"></p><p>首先设置一下步长以及数据单位</p><p><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678420280862.png" alt="1678420280862"></p><p>数据已经生成成功了，可以保存为 csv 格式数据<br><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678420337445.png" alt="1678420337445"></p><p><img src="/blog/%E4%BD%BF%E7%94%A8STK%E5%88%B6%E4%BD%9C%E8%88%AA%E8%BF%B9%E6%95%B0%E6%8D%AE/1678420632577.png" alt="1678420632577"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>GIS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>STK</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用 Docker 以 docker-compose 的方式安装 MySQL 5.7.44</title>
     <link href="/blog/2025/05/02/%E4%BD%BF%E7%94%A8%20Docker%20%E4%BB%A5%20docker-compose%20%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85%20MySQL%205.7.44/"/>
     <url>/blog/2025/05/02/%E4%BD%BF%E7%94%A8%20Docker%20%E4%BB%A5%20docker-compose%20%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85%20MySQL%205.7.44/</url>
