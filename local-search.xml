@@ -11,6 +11,22 @@
     <content type="html"><![CDATA[<h1 id="基于3dtiles格式数据对倾斜摄影模型进行轻量化处理"><a href="#基于3dtiles格式数据对倾斜摄影模型进行轻量化处理" class="headerlink" title="基于3dtiles格式数据对倾斜摄影模型进行轻量化处理"></a>基于3dtiles格式数据对倾斜摄影模型进行轻量化处理</h1><p>软件: SuperMap iDesktopX 11i 2023</p><p>原数据格式: 3dtiles</p><p>目标格式: 3dtiles</p><p>处理过程:</p><ul><li><p><code>三维数据</code> -&gt; <code>3DTiles-&gt;S3M</code></p><blockquote><p>设置源配置文件: tileset.json 文件位置</p><p>目标路径: 生成的S3M文件的文件夹路径</p><p>文件类型: 倾斜摄影</p><p>纹理压缩格式: DXT(PC设备)</p><p>顶点优化方式: 不压缩</p><p>S3M版本: S3M 1.0</p><p>线程数: 若崩溃，减少线程数值</p></blockquote></li><li><p><code>三维数据</code>-&gt;<code>数据处理</code>-&gt;<code>倾斜入库</code></p><blockquote><p>源配置文件(.scp): 若是单个数据文件夹，则选择s3m目录下的.scp文件即可，若是多个数据文件夹，需要选择多个.scp文件，然后勾选合并图层选项，单个.scp文件无需勾选</p><p>基础设置:</p><ul><li>输出目录: 新S3M文件的文件夹路径</li><li>S3M版本: S3M 1.0</li><li>纹理压缩格式: DXT(PC设备)</li><li>线程数: 若崩溃，减少线程数值</li><li>顶点优化方式: Draco压缩</li><li>存储格式: 原始</li><li>中心点坐标单位: 米</li></ul><p>高级设置:</p><ul><li>勾选重建LOD<ul><li>重建指数: 4^n个块为1个块文件，根据文件总体大小设置</li><li>顶层节点着色类型: 纹理和顶点颜色</li><li>重建类型: 重建所有层级</li><li>勾选融合边界</li></ul></li><li>勾选坐标转换<ul><li>目标坐标系: 4490，(注: 源数据坐标系为投影坐标系4546)</li><li>参照系转换设置: 转换方法: Geocemtric Translation(3-para)</li></ul></li><li>勾选纹理重映射</li><li>原配置文件若有多个S3M文件，则勾选合并图层</li></ul></blockquote></li><li><p><code>工具箱</code>-&gt;<code>S3M-&gt;3DTiles</code></p><blockquote><p>源数据：选择第二次轻量化生成的S3M文件夹下的.scp文件</p><p>结果数据: 最后的结果数据文件夹路径</p><p>参数设置: 线程数: 若崩溃，减少线程数值</p></blockquote></li></ul>]]></content>
     
     
+    <categories>
+      
+      <category>GIS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>OSGB</tag>
+      
+      <tag>3D Tiles</tag>
+      
+      <tag>S3M</tag>
+      
+    </tags>
     
   </entry>
   
@@ -24,6 +40,22 @@
     <content type="html"><![CDATA[<h1 id="倾斜摄影数据处理"><a href="#倾斜摄影数据处理" class="headerlink" title="倾斜摄影数据处理"></a>倾斜摄影数据处理</h1><h1 id="OSGB优化"><a href="#OSGB优化" class="headerlink" title="OSGB优化"></a>OSGB优化</h1><p>1.合并根节点</p><p>先使用 Desktop 11i(2022)版本生成scp配置文件</p><p>使用超图 iDesktopX 10i 10.0版本进行根节点合并</p><p>根节点条数按金字塔层级x4计算，如金字塔层级设置为1，则合并根节点数为原根节点数&#x2F;4*1</p><h1 id="3D-Tiles"><a href="#3D-Tiles" class="headerlink" title="3D Tiles"></a>3D Tiles</h1><p>1.OSGB-3D Tiles</p><p>使用CesiumLab将处理好的OSGB数据转成3D Tiles</p><p>注意如需数据优化 需在OSGB 阶段进行优化再转换</p><p>2.S3M - 3D Tiles</p><p>用 SuperMap iDesktop x 11i(2023) 将 S3M1.0数据转为 3D Tiles</p><p>注意 仅用 S3M1.0 数据才能用其转为3D Tiles</p><h1 id="S3M"><a href="#S3M" class="headerlink" title="S3M"></a>S3M</h1><p>1.OSGB-S3M前端插件可加载版</p><p>使用SuperMap iDesktopx 11i(2022) 11.0 进行倾斜摄影入库(几何不压缩，纹理DXT)，完成后生成 S3M 文件前端可加载</p><p>2.OSGB-S3M3.0文件压缩版-3D Tiles</p><p><strong>使用SuperMap Desktop 11i 进行倾斜摄影入库 按照最大优化设置，生成 S3M文件可用于转换为3D Tiles</strong></p><p>（仅可转换S3M1.0）</p><blockquote><p>正射部分在转成3dtiles后，缩放到一定层级会缺失部分</p></blockquote><p>3.3D Tiles-S3M3.0-倾斜摄影入库</p><p>先将3D Tiles 用SuperMap iDesktopx 11i(2022)转为 S3M3.0，再倾斜摄影入库重新入库合并根节点等（可能存在模型丢失问题）</p><p>4.S3M 3.0 &gt;S3M 2.0&gt;S3M 1.0</p>]]></content>
     
     
+    <categories>
+      
+      <category>GIS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>OSGB</tag>
+      
+      <tag>3D Tiles</tag>
+      
+      <tag>S3M</tag>
+      
+    </tags>
     
   </entry>
   
