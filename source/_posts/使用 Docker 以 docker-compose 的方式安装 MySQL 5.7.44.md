@@ -2,7 +2,7 @@
 title: 使用 Docker 以 docker-compose 的方式安装 MySQL 5.7.44
 date: 2025-05-03 05:11:19
 categories: Database
-tags: mysql
+tags: [mysql]
 ---
 
 # 使用 Docker 以 docker-compose 的方式安装 MySQL 5.7.44

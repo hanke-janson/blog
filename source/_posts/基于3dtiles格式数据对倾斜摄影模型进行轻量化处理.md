@@ -1,7 +1,8 @@
 ---
 title: 基于3dtiles格式数据对倾斜摄影模型进行轻量化处理
 date: 2025-05-10 15:55:48
-tags:
+categories: GIS
+tags: [OSGB, 3D Tiles, S3M]
 ---
 
 # 基于3dtiles格式数据对倾斜摄影模型进行轻量化处理
