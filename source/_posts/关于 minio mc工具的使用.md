@@ -1,6 +1,5 @@
 ---
-layout: 关于
-title: mc工具的使用
+title: 关于 minio mc工具的使用
 date: 2025-05-10 17:11:13
 categories: 对象存储
 tags: [minio, mc]
