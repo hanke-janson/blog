@@ -5,13 +5,15 @@ categories: 对象存储
 tags: [minio, mc]
 ---
 
+# 关于 minio mc工具的使用
+
 参考 https://blog.csdn.net/changlina_1989/article/details/125936765
 
 下载windows 64bit版本mc.exe: <https://dl.min.io/client/mc/release/windows-amd64/mc.exe>
 
 > 查看mc关联的minio服务`.\mc.exe config host list`
 
-1、添加云存储服务
+## 1、添加云存储服务
 
 > 把mc.exe放在D盘tools文件夹下，依次执行以下命令： `D:\tools>mc config host add minio http://internal.minio-server minioadmin minioadmin`
 >
@@ -21,11 +23,11 @@ tags: [minio, mc]
 >
 > 回车输入Access Key、Secret Key，本例中两个值都为minioadmin
 
-2、 查看bucket
+## 2、 查看bucket
 
 > D:\tools>mc ls minio-server
 
-3、上传文件及文件夹到bucket中
+## 3、上传文件及文件夹到bucket中
 
 > 上传文件命令： `D:\tools>mc cp D:\project\jdjr\bbdp\bi大屏\部署资源\monet-components\1.txt minio-server/agile-visual-components`
 
@@ -34,7 +36,7 @@ tags: [minio, mc]
 > 上传文件夹命令（把整个文件夹下的文件及文件夹都上传，不包含此文件夹）：
 > D:\tools>mc cp D:\project\jdjr\bbdp\bi大屏\部署资源\monet-components\ minio-server/agile-visual-components --recursive
 
-4、附命令：删除bucket中的文件
+## 4、附命令：删除bucket中的文件
 
 > 删除文件： `D:\tools>mc rm minio-server/agile-visual-components/1.txt`
 
