@@ -1029,8 +1029,8 @@ links:
   # Member item of page
   items:
     - {
-      title: "codefather",
-      intro: "鱼皮的编程导航",
+      title: "编程导航",
+      intro: "皮总的编程导航",
       link: "https://www.codefather.cn/vip?shareCode=tm8hal",
       avatar: "https://www.codefather.cn/logo.png"
     }
