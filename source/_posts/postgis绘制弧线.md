@@ -119,7 +119,7 @@ select st_astext(st_curvetoline('CIRCULARSTRING(2 0, 4 4, 3 0)', 4490))
 
 插入数据
 
-相关函数见：[make_circularstring](/img/postgis绘制弧线/make_circularstring.sql)
+相关函数见：[make_circularstring](/blog/img/postgis绘制弧线/make_circularstring.sql)
 
 ```sql
 insert into no_fly_zone (area) values (
