@@ -7,8 +7,6 @@ tags: [minio, mc]
 
 # 关于 minio mc工具的使用
 
-参考 https://blog.csdn.net/changlina_1989/article/details/125936765
-
 下载windows 64bit版本mc.exe: <https://dl.min.io/client/mc/release/windows-amd64/mc.exe>
 
 > 查看mc关联的minio服务`.\mc.exe config host list`
@@ -41,3 +39,7 @@ tags: [minio, mc]
 > 删除文件： `D:\tools>mc rm minio-server/agile-visual-components/1.txt`
 
 > 删除文件夹： `D:\tools>mc rm minio-server/agile-visual-components --recursive –force`
+
+# 参考链接
+
+[minio批量上传文件及文件夹技巧](https://blog.csdn.net/changlina_1989/article/details/125936765)
