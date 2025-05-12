@@ -1,5 +1,5 @@
 ---
-title: postgis数据库部署
+title: postgis数据库部署及坐标转换
 date: 2025-05-12 23:47:50
 categories: Database
 tags: [postgresql, postgis]
@@ -7,13 +7,13 @@ tags: [postgresql, postgis]
 
 # PostGIS数据库部署
 
-相关部署Dockerfile见：[postgis-docker](/blog/img/postgis数据库部署/Dockerfile)
+相关部署Dockerfile见：[postgis-docker](/blog/img/postgis数据库部署及坐标转换/Dockerfile)
 相关文件
 
-- [initdb-postgis.sh](/blog/img/postgis数据库部署/initdb-postgis.sh)
-- [update-postgis.sh](/blog/img/postgis数据库部署/update-postgis.sh)
-- [postgis-3.4.2.tar.gz](/blog/img/postgis数据库部署/postgis-3.4.2.tar.gz)
-- [pg_rman-1.3.16-pg14.tar.gz](/blog/img/postgis数据库部署/pg_rman-1.3.16-pg14.tar.gz) 备份工具（可选）
+- [initdb-postgis.sh](/blog/img/postgis数据库部署及坐标转换/initdb-postgis.sh)
+- [update-postgis.sh](/blog/img/postgis数据库部署及坐标转换/update-postgis.sh)
+- [postgis-3.4.2.tar.gz](/blog/img/postgis数据库部署及坐标转换/postgis-3.4.2.tar.gz)
+- [pg_rman-1.3.16-pg14.tar.gz](/blog/img/postgis数据库部署及坐标转换/pg_rman-1.3.16-pg14.tar.gz) 备份工具（可选）
 
 ## 初始化数据库
 
@@ -36,7 +36,7 @@ select * from postgis_full_version();
 
 ## 函数安装方式
 
-添加扩展坐标加偏函数（来源<https://github.com/geocompass/pg-coordtransform>）这个库里的函数有一点点问题，已修改见：[coordtransform](/blog/img/postgis数据库部署/geoc-pg-coordtransform.sql)
+添加扩展坐标加偏函数（来源<https://github.com/geocompass/pg-coordtransform>）这个库里的函数有一点点问题，已修改见：[coordtransform](/blog/img/postgis数据库部署及坐标转换/geoc-pg-coordtransform.sql)
 
 建表时geom字段类型选用geometry
 
