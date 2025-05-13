@@ -524,3 +524,9 @@ Dissolver参数将使用公共属性值合并所有要素
 |                    Google KML                     | .kml                |                                                                                                          |
 |             GPS eXchange Format (GPX)             | .gpx                | GPX格式不会在数据集内记录其坐标系                                                                        |
 |                                                   |                     |                                                                                                          |
+
+# 相关文件
+
+- [fme-desktop-2018-基础培训教程.pdf](/blog/img/FME入门/fme-desktop-2018-基础培训教程.pdf)
+- [fme-desktop-2018-高级培训教程.pdf](/blog/img/FME入门/fme-desktop-2018-高级培训教程.pdf)
+- [FME2018转换器参考手册.pdf](/blog/img/FME入门/FME2018转换器参考手册.pdf)
