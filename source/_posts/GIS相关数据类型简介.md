@@ -238,7 +238,7 @@ LIDAR:点云数据(.las)可使用Cesiumlab中的点云切片进行处理，结�
 
 - c4d工程文件，使用c4d打开后导出obj进行转换
 
-[3dtiles(.b3dm/.s3dm/.i3dm)](https://www.blender.org/)
+[3dtiles(.b3dm/.s3dm/.i3dm)](https://github.com/CesiumGS/3d-tiles)
 
 - 三维模型数据，可使用cesiumlab对shp/osgb等数据进行转换获得
 - 其中shp数据为建筑轮廓（面数据，需要带有高度/楼层字段）
