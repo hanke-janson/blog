@@ -75,7 +75,7 @@ https://github.com/locationtech/proj4j
 
 > ### 将 Proj4J 与 Maven 结合使用
 >
-> **！重要的！**从`1.2.2`版本开始，`proj4-core`不包含 EPSG 许可文件。为了使 proj4j 正常运行，考虑`proj4-epsg`依赖使用是有意义的。
+> **！重要的！** 从`1.2.2`版本开始，`proj4-core`不包含 EPSG 许可文件。为了使 proj4j 正常运行，考虑`proj4-epsg`依赖使用是有意义的。
 >
 > 要在 Maven 项目中包含 Proj4J，请添加如下依赖块：
 >
