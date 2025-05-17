@@ -15,5 +15,4 @@ tags: [IntelliJ IDEA]
 
 ## 2. 使用插件
 
-[官方文档](<https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html>)
-
+[官方文档](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
