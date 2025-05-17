@@ -11,7 +11,7 @@ tags: [IntelliJ IDEA]
 
 在IDEA中安装插件`HTTP Client`，安装完成后重启IDEA。
 
-![HTTP Client 插件](/img/IDEA中HTTP插件的使用/HTTP Client 插件.png)
+![HTTP Client 插件](</img/IDEA中HTTP插件的使用/HTTP Client 插件.png>)
 
 ## 2. 使用插件
 
