@@ -35,7 +35,7 @@ TLE轨道根数对应的计算模型是简化普适模型（simplified perturbat
 
 ## 第一行（必需）
 
-[Tle_first_row](/img/TLE两行根数简介及获取方法/Tle_first_row.jpg)
+![Tle_first_row](/img/TLE两行根数简介及获取方法/Tle_first_row.jpg)
 
 | 序号 | 位数  |                                     内容                                      |    例子     |
 | :--: | :---: | :---------------------------------------------------------------------------: | :---------: |
@@ -56,7 +56,7 @@ TLE轨道根数对应的计算模型是简化普适模型（simplified perturbat
 
 ## 第二行（必需）
 
-[Tle_second_row](/img/TLE两行根数简介及获取方法/Tle_second_row.jpg)
+![Tle_second_row](/img/TLE两行根数简介及获取方法/Tle_second_row.jpg)
 
 | 序号 | 位数  |                      内容                       |    例子     |
 | :--: | :---: | :---------------------------------------------: | :---------: |
