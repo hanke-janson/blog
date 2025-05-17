@@ -33,7 +33,7 @@
     <link href="/blog/2025/05/17/IDEA%E4%B8%ADHTTP%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <url>/blog/2025/05/17/IDEA%E4%B8%ADHTTP%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     
-    <content type="html"><![CDATA[<h1 id="IDEA-HTTP-Client插件的使用"><a href="#IDEA-HTTP-Client插件的使用" class="headerlink" title="IDEA &#96;HTTP Client插件的使用"></a>IDEA &#96;HTTP Client插件的使用</h1><h2 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1. 安装插件"></a>1. 安装插件</h2><p>在IDEA中安装插件<code>HTTP Client</code>，安装完成后重启IDEA。</p><p><img src="/blog/img/IDEA%E4%B8%ADHTTP%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/image.png" alt="HTTP Client 插件"></p><h2 id="2-使用插件"><a href="#2-使用插件" class="headerlink" title="2. 使用插件"></a>2. 使用插件</h2><p><a href="https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html">官方文档</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="IDEA-HTTP-Client插件的使用"><a href="#IDEA-HTTP-Client插件的使用" class="headerlink" title="IDEA &#96;HTTP Client插件的使用"></a>IDEA &#96;HTTP Client插件的使用</h1><h2 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1. 安装插件"></a>1. 安装插件</h2><p>在IDEA中安装插件<code>HTTP Client</code>，安装完成后重启IDEA。</p><p>![HTTP Client 插件](&#x2F;img&#x2F;IDEA中HTTP插件的使用&#x2F;HTTP Client 插件.png)</p><h2 id="2-使用插件"><a href="#2-使用插件" class="headerlink" title="2. 使用插件"></a>2. 使用插件</h2><p><a href="https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html">官方文档</a></p>]]></content>
     
     
     <categories>
