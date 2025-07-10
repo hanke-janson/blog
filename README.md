@@ -4,10 +4,10 @@ Hexo搭建
 ## 安装Hexo
 
 ```shell
-npm install hexo-cli -g # 全局安装hexo的命令行程序 
-hexo init blog # 初始化项目 
-cd blog # 切换到项目目录 
-yarn install # 安装项目依赖 
+npm install hexo-cli -g # 全局安装hexo的命令行程序
+hexo init blog # 初始化项目
+cd blog # 切换到项目目录
+yarn install # 安装项目依赖
 yarn server # 启动hexo服务
 ```
 然后在浏览器中访问 http://localhost:4000 就可以看到博客页面了。
@@ -33,16 +33,16 @@ yarn add gulp-minify-css gulp-babel gulp-uglify gulp-htmlmin gulp-htmlclean gulp
 下载fluid主题：
 ```shell
 cd blog
-yarn add hexo-theme-fluid --save 
+yarn add hexo-theme-fluid --save
 ```
 然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml (opens new window)内容复制过去
 
 修改配置文件`_config.yml`中的相关字段：
 ```yaml
 # 指定主题
-theme: fluid  
+theme: fluid
 # 指定语言，会影响主题显示的语言，按需修改
-language: zh-CN  
+language: zh-CN
 # 在生成文章的时候生成一个同名的资源目录用于存放图片文件
 post_asset_folder: true
 ```

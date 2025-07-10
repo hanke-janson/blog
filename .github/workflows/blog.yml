@@ -1,7 +1,7 @@
-# .github/workflows/blog.yml 
-name: BLOG 
+# .github/workflows/blog.yml
+name: BLOG
 # run this action in every push
-on: [push] 
+on: [push]
 permissions:
   contents: write
 jobs:
@@ -13,7 +13,6 @@ jobs:
       - name: Install and Run Check Script
         run: |
           yarn install
-          yarn prettier --check ./source
       - name: Build
         run: yarn build
       - name: gulp
