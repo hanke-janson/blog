@@ -19,7 +19,7 @@ tags: [VirtualBox, 坑]
 
 CTRL + ALT + F3 # 进入命令行模式（需要返回桌面时CTRL + ALT + F1）
 
-![终端界面](/img/Oracle VM VirtualBox 创建的 Ubuntu 打不开终端界面/终端界面.png)
+![终端界面](/img/OracleVMVirtualBox创建的Ubuntu打不开终端界面/终端界面.png)
 
 ```bash
 # 进入root用户
