@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>ubnutu18.04自带git版本过低问题</title>
+    <link href="/blog/2025/07/12/ubnutu18-04%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E%E9%97%AE%E9%A2%98/"/>
+    <url>/blog/2025/07/12/ubnutu18-04%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ubnutu18-04自带git版本过低问题"><a href="#ubnutu18-04自带git版本过低问题" class="headerlink" title="ubnutu18.04自带git版本过低问题"></a>ubnutu18.04自带git版本过低问题</h1><p>Ubuntu 18.04 默认自带的Git 版本可能比较旧，可以通过以下步骤升级到最新版本：</p><p>添加Git PPA 源:打开终端，输入以下命令添加Git 官方的PPA 源：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> add-apt-repository ppa:git-core/ppa<br></code></pre></td></tr></table></figure><p>按回车键确认添加。<br>更新软件包列表并安装Git:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt install git<br></code></pre></td></tr></table></figure><p>输入 y 确认安装。<br>验证Git 版本:安装完成后，运行以下命令验证Git 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br></code></pre></td></tr></table></figure><p>如果显示的是最新的版本号，说明升级成功。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+      <tag>ubnutu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>换源</title>
     <link href="/blog/2025/07/10/%E6%8D%A2%E6%BA%90/"/>
     <url>/blog/2025/07/10/%E6%8D%A2%E6%BA%90/</url>
@@ -13,7 +40,7 @@
     
     <categories>
       
-      <category>换源</category>
+      <category>Linux</category>
       
     </categories>
     
