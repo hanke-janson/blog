@@ -4,6 +4,83 @@
   
   
   <entry>
+    <title>NerdFonts字体安装</title>
+    <link href="/blog/2025/07/13/NerdFonts%E5%AD%97%E4%BD%93%E5%AE%89%E8%A3%85/"/>
+    <url>/blog/2025/07/13/NerdFonts%E5%AD%97%E4%BD%93%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Nerd-Fonts字体安装"><a href="#Nerd-Fonts字体安装" class="headerlink" title="Nerd Fonts字体安装"></a>Nerd Fonts字体安装</h1><p>官网：<a href="https://www.nerdfonts.com/">https://github.com/ryanoasis/nerd-fonts</a></p><h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><blockquote><p>注意:<br>此方法可以在所有使用 <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fontconfig</a> 进行系统字体管理的 <em>linux</em> 发行版上使用。</p></blockquote><p>首先，从项目仓库获取必要的文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git<br></code></pre></td></tr></table></figure><p>此命令仅下载必要的文件，省略了 <em>patched-fonts</em> 中包含的字体，以便不使用将不会使用的字体来增加本地仓库的体积，从而允许选择性安装。</p><p>进入新创建的文件夹，然后使用以下命令下载字体集</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ~/nerd-fonts/<br>git sparse-checkout add patched-fonts/Meslo<br></code></pre></td></tr></table></figure><p>该命令会将字体下载到 <em>patched-fonts</em> 文件夹中，完成后，您可以使用提供的 install.sh 脚本安装它们，键入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./install.sh Meslo<br></code></pre></td></tr></table></figure><p><em>install.sh</em> 脚本将字体复制到用户文件夹 ~&#x2F;.local&#x2F;share&#x2F;fonts&#x2F;，并调用 <em>fc-cache</em> 程序在系统上注册它们。完成后，字体将可用于终端模拟器。</p><p>参考：<br><a href="https://docs.rocky-linux.cn/books/nvchad/nerd_fonts/">rocky-linux&#x2F;documentation</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>字体</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Nerd Fonts</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>VIM插件</title>
+    <link href="/blog/2025/07/13/VIM%E6%8F%92%E4%BB%B6/"/>
+    <url>/blog/2025/07/13/VIM%E6%8F%92%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="VIM插件"><a href="#VIM插件" class="headerlink" title="VIM插件"></a>VIM插件</h1><h2 id="使用vim-plug管理插件"><a href="#使用vim-plug管理插件" class="headerlink" title="使用vim-plug管理插件"></a>使用vim-plug管理插件</h2><p><a href="https://github.com/junegunn/vim-plug">vim-plug</a></p><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>以下是我目前.vimrc文件的配置</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell">&quot; 基本配置<br>syntax on                     &quot; 设置语法高亮<br>set nu                        &quot; 设置行数显示<br>set tabstop=4                 &quot; 设置tab缩进长度为4空格<br>set autoindent                &quot; 设置自动缩进，适用所有类型文件<br>set cindent                   &quot; 针对C语言的自动缩进功能，在C语言的编程环境中，比autoindent更加精准<br>set list lcs=tab:\|\          &quot; 设置tab提示符号为 &quot;|&quot;，注意最后一个反斜杠后面要留有空格<br>set cc=0                      &quot; 设置高亮的列，这里设置为0，代表关闭<br>set cursorline                &quot; 突出显示当前行<br>&quot; 插件列表<br>call plug#begin()<br>&quot; 一些基本且符合直觉的配置<br>Plug &#x27;tpope/vim-sensible&#x27;<br>&quot; git管理<br>Plug &#x27;tpope/vim-fugitive&#x27;<br>&quot; 目录树<br>Plug &#x27;scrooloose/nerdtree&#x27;<br>&quot; 代码结构<br>Plug &#x27;majutsushi/tagbar&#x27;<br>&quot; 突出光标所在单词<br>Plug &#x27;rrethy/vim-illuminate&#x27;<br>&quot; 模糊搜索<br>Plug &#x27;junegunn/fzf&#x27;, &#123; &#x27;do&#x27;: &#123; -&gt; fzf#install() &#125; &#125;<br>Plug &#x27;junegunn/fzf.vim&#x27;<br>&quot; Plugins for UI<br>Plug &#x27;vim-airline/vim-airline&#x27;<br>Plug &#x27;vim-airline/vim-airline-themes&#x27;<br>&quot; 图标<br>Plug &#x27;ryanoasis/vim-devicons&#x27;<br><br>call plug#end()<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>vim</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vim</tag>
+      
+      <tag>plugin</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>C++环境配置</title>
+    <link href="/blog/2025/07/13/C++%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2025/07/13/C++%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="C-环境配置"><a href="#C-环境配置" class="headerlink" title="C++环境配置"></a>C++环境配置</h1><p>基础环境为 Ubuntu18.04</p><h2 id="安装g-编译器"><a href="#安装g-编译器" class="headerlink" title="安装g++编译器"></a>安装g++编译器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">g++ -v<br></code></pre></td></tr></table></figure><p>若未安装GCC，那么请按照 <a href="http://gcc.gnu.org/install/">http://gcc.gnu.org/install/</a> 上的详细说明安装GCC。</p><p>原源码镜像很慢，建议使用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/gcc.git/">https://mirrors.tuna.tsinghua.edu.cn/help/gcc.git/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>C++</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ubnutu18.04自带git版本过低问题</title>
     <link href="/blog/2025/07/12/ubnutu18-04%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E%E9%97%AE%E9%A2%98/"/>
     <url>/blog/2025/07/12/ubnutu18-04%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E%E9%97%AE%E9%A2%98/</url>
