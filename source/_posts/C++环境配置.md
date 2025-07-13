@@ -9,11 +9,17 @@ tags: [学习笔记]
 
 基础环境为 Ubuntu18.04
 
-## 安装g++编译器
+## 安装编译器
+
+### 直接安装
 
 ```bash
+sudo apt update
+sudo apt install build-essential
 g++ -v
 ```
+
+### 源码编译安装
 
 若未安装GCC，那么请按照 [http://gcc.gnu.org/install/](http://gcc.gnu.org/install/) 上的详细说明安装GCC。
 
