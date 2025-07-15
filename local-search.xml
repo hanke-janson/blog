@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>archLinux入门</title>
+    <link href="/blog/2025/07/15/archLinux%E5%85%A5%E9%97%A8/"/>
+    <url>/blog/2025/07/15/archLinux%E5%85%A5%E9%97%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ArchLinux入门"><a href="#ArchLinux入门" class="headerlink" title="ArchLinux入门"></a>ArchLinux入门</h1><p>参考：</p><p><a href="https://arch.icekylin.online/">archlinux 简明指南</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>archLinux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>node版本环境配置</title>
+    <link href="/blog/2025/07/15/node%E7%89%88%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2025/07/15/node%E7%89%88%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="node版本环境配置"><a href="#node版本环境配置" class="headerlink" title="node版本环境配置"></a>node版本环境配置</h1><h2 id="1-安装nvm"><a href="#1-安装nvm" class="headerlink" title="1. 安装nvm"></a>1. 安装nvm</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash<br></code></pre></td></tr></table></figure><h2 id="2-安装node"><a href="#2-安装node" class="headerlink" title="2. 安装node"></a>2. 安装node</h2><p>安装最新版LTS</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm install --lts<br></code></pre></td></tr></table></figure><p>列出已安装的 Node.js 版本‌：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm <span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure><p>‌切换到特定版本的 Node.js‌：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm use 14<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Nodejs</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>NerdFonts字体安装</title>
     <link href="/blog/2025/07/13/NerdFonts%E5%AD%97%E4%BD%93%E5%AE%89%E8%A3%85/"/>
     <url>/blog/2025/07/13/NerdFonts%E5%AD%97%E4%BD%93%E5%AE%89%E8%A3%85/</url>
@@ -60,7 +110,7 @@
     <link href="/blog/2025/07/13/C++%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <url>/blog/2025/07/13/C++%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     
-    <content type="html"><![CDATA[<h1 id="C-环境配置"><a href="#C-环境配置" class="headerlink" title="C++环境配置"></a>C++环境配置</h1><p>基础环境为 Ubuntu18.04</p><h2 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h2><h3 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt install build-essential<br>g++ -v<br></code></pre></td></tr></table></figure><h3 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h3><p>若未安装GCC，那么请按照 <a href="http://gcc.gnu.org/install/">http://gcc.gnu.org/install/</a> 上的详细说明安装GCC。</p><p>原源码镜像很慢，建议使用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/gcc.git/">https://mirrors.tuna.tsinghua.edu.cn/help/gcc.git/</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="C-环境配置"><a href="#C-环境配置" class="headerlink" title="C++环境配置"></a>C++环境配置</h1><h2 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h2><h3 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt install build-essential<br>g++ -v<br></code></pre></td></tr></table></figure><h3 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h3><p>若未安装GCC，那么请按照 <a href="http://gcc.gnu.org/install/">http://gcc.gnu.org/install/</a> 上的详细说明安装GCC。</p><p>原源码镜像很慢，建议使用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/gcc.git/">https://mirrors.tuna.tsinghua.edu.cn/help/gcc.git/</a></p>]]></content>
     
     
     <categories>
