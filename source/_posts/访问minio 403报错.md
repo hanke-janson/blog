@@ -1,17 +1,19 @@
 ---
 title: 访问minio 403报错
 date: 2025-07-16 11:23:26
-categories: minio
+categories: 对象存储
 tags: [minio, 坑]
 ---
 
 # 访问minio 403报错
 
 ## 报错信息
+
 前端请求虚拟机中的minio docker容器：
 GET http://xxxx:9000/xxx?location 403 (Forbidden)
 
 ## 解决方式
+
 ```bash
 # 查看当前时间，结果如下：Tue Mar 4 01:36:45 CST 2014
 date
@@ -19,3 +21,4 @@ date
 date -s 09:38:40
 # 将系统时间写入硬件时钟，避免重启后失效‌
 hwclock -w
+```
