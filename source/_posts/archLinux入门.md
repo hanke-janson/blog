@@ -9,4 +9,4 @@ tags: [archLinux]
 
 参考：
 
-[archlinux 简明指南](<https://arch.icekylin.online/>)
+[archlinux 简明指南](https://arch.icekylin.online/)
