@@ -8,9 +8,21 @@
     <link href="/blog/2025/11/19/gitlab%E4%B8%ADroot%E5%AF%86%E7%A0%81%E5%BF%98%E8%AE%B0%E6%80%8E%E4%B9%88%E5%8A%9E/"/>
     <url>/blog/2025/11/19/gitlab%E4%B8%ADroot%E5%AF%86%E7%A0%81%E5%BF%98%E8%AE%B0%E6%80%8E%E4%B9%88%E5%8A%9E/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="gitlab中root密码忘记怎么办"><a href="#gitlab中root密码忘记怎么办" class="headerlink" title="gitlab中root密码忘记怎么办"></a>gitlab中root密码忘记怎么办</h1><p>修改gitlab中root用户的密码（Omnibus GitLab）</p><p>进入容器内处理</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo gitlab-rails console -e production<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在控制台中执行</span><br>user=User.find_by(username:&#x27;root&#x27;)<br>user.password=&#x27;新密码&#x27;<br>user.password_confirmation=&#x27;新密码&#x27;<br>user.save!<br>exit<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重启GitLab服务</span><br>sudo gitlab-ctl reconfigure<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>gitlab</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
     
   </entry>
   
